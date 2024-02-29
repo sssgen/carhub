@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import CustomButton from "@/components/CustomButton";
+import NavbarAuth from "./NavbarAuth";
 
 const NavBar = () => (
   <header className='w-full  absolute z-10'>
@@ -15,11 +15,7 @@ const NavBar = () => (
         />
       </Link>
 
-      <CustomButton
-        title='Sign in'
-        btnType='button'
-        containerStyles='text-primary-blue rounded-full bg-white min-w-[130px]'
-      />
+      <NavbarAuth />
     </nav>
   </header>
 );

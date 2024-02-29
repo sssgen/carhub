@@ -18,7 +18,7 @@ const Hero = () => {
         <Link href="/cars">
           <CustomButton
             title="Explore Cars"
-            containerStyles="bg-primary-blue text-white rounded-full mt-10"
+            containerStyles="text-white rounded-full mt-10"
           />
         </Link>
       </div>
