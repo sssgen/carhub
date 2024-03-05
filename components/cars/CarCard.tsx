@@ -5,6 +5,8 @@ import { calculateCarRent, generateCarImageUrl } from "@utils";
 import { CarProps } from "@types";
 import CustomButton from "@/components/CustomButton";
 import CarDetails from "./CarDetails";
+import { motion } from "framer-motion";
+import { cardAppearance } from "@constants/framerAnimations";
 
 interface CarCardProps {
   car: CarProps;
@@ -18,7 +20,12 @@ const CarCard = ({ car }: CarCardProps) => {
   const carRent = calculateCarRent(city_mpg, year);
 
   return (
-    <div className="car-card group">
+    <motion.div
+      className="car-card group"
+      initial="hidden"
+      whileInView="visible"
+      variants={cardAppearance}
+    >
       <div className="car-card__content">
         <h2 className="car-card__content-title">
           {make} {model}
@@ -65,7 +72,7 @@ const CarCard = ({ car }: CarCardProps) => {
       </div>
 
       <CarDetails isOpen={isOpen} closeModal={() => setIsOpen(false)} car={car} />
-    </div>
+    </motion.div>
   );
 };
 
